@@ -24,18 +24,25 @@ public class SubjectList extends AppCompatActivity {
     RecyclerView recyclerView;
     SubjectListAdapter adapter;
     ArrayList<String> list=new ArrayList<String>();
+    int ch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_list);
         Intent intent=getIntent();
+        if(intent.hasExtra("ch"))
+        {
+            ch=Integer.valueOf(intent.getStringExtra("ch"));
+
+        }
         if(intent.hasExtra("Data"))
         {
             String studentid=intent.getStringExtra("Data");
             init(studentid);
             setdata(studentid);
         }
+
 
     } @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,6 +51,7 @@ public class SubjectList extends AppCompatActivity {
         return true;
 
     }
+
 
     private void setdata(String studentid) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -69,7 +77,7 @@ public class SubjectList extends AppCompatActivity {
     private void init(String studentid) {
         recyclerView=findViewById(R.id.subjectList);
         recyclerView.setLayoutManager(new LinearLayoutManager(SubjectList.this));
-        adapter =new SubjectListAdapter(SubjectList.this,list);
+        adapter =new SubjectListAdapter(SubjectList.this,ch,list);
         recyclerView.setAdapter(adapter);
     }
 }

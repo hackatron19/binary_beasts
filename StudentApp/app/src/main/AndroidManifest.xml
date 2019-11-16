@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.androlord.studentapp">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Support.GoodsUpload"></activity>
+        <activity android:name=".Funtions.Goods"></activity>
+        <activity android:name=".Support.GoodsUpload" />
         <activity android:name=".Support.SubjectList" />
         <activity android:name=".Funtions.ViewPdf" />
+        <activity android:name=".Funtions.ChatActivity" />
         <activity android:name=".Funtions.UploadPdf" />
         <activity android:name=".Funtions.Uploadpdf" />
         <activity android:name=".Main2Activity" />

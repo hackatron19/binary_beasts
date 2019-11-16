@@ -15,9 +15,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.androlord.studentapp.Authentication.LoginActivity;
+import com.androlord.studentapp.Funtions.ChatActivity;
+import com.androlord.studentapp.Funtions.Goods;
 import com.androlord.studentapp.Funtions.UploadPdf;
 import com.androlord.studentapp.Funtions.ViewAttendence;
 import com.androlord.studentapp.Funtions.ViewMarks;
+import com.androlord.studentapp.Support.GoodsUpload;
 import com.androlord.studentapp.Support.SubjectList;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -138,8 +141,28 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Intent intent=new Intent(MainActivity.this, SubjectList.class);
                     intent.putExtra("Data",studentcode);
+                    intent.putExtra("ch","1");
                     startActivity(intent);
                 }
+
+            }
+        });
+        LinearLayout asset=findViewById(R.id.Assets);
+        asset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Goods.class));
+            }
+        });
+
+        LinearLayout doubtsession = findViewById(R.id.doubt_session);
+        doubtsession.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, SubjectList.class);
+                intent.putExtra("Data",studentcode);
+                intent.putExtra("ch","2");
+                startActivity(intent);
 
             }
         });

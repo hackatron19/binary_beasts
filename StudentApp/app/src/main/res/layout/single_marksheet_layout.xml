@@ -12,22 +12,24 @@
             android:layout_marginStart="20dp"
             android:textSize="25sp"
             android:layout_marginTop="20dp"
-            android:id="@+id/subject_code_single_result"
+            android:id="@+id/subject_code"
             android:text="Subject Code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <ImageView
             android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
-            android:layout_toEndOf="@+id/text"
+            android:layout_toEndOf="@+id/subject_code"
+            android:id="@+id/subject_code_arrow_down"
             android:layout_marginTop="28dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <ImageView
             android:layout_marginTop="28dp"
-            android:layout_toEndOf="@+id/text"
+            android:layout_toEndOf="@+id/subject_code"
             android:visibility="gone"
+            android:id="@+id/subject_code_arrow_up"
             android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -37,6 +39,7 @@
 
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/layout_7"
         android:layout_below="@+id/layout1"
         android:layout_width="match_parent"
@@ -45,7 +48,6 @@
 
         <RelativeLayout
             android:id="@+id/layout_6"
-
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -64,7 +66,7 @@
                 android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="5dp"
-                android:id="@+id/arow_"
+                android:id="@+id/arrow_mid_sem_down"
                 android:layout_height="wrap_content"/>
 
             <ImageView
@@ -73,17 +75,18 @@
                 android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="5dp"
+                android:id="@+id/arrow_mid_sem_up"
                 android:layout_height="wrap_content"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/layout_6"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:id="@+id/degree"
+            android:id="@+id/mid_sem"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:orientation="vertical"
@@ -228,6 +231,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/layout3"
         android:layout_below="@+id/layout_7"
         android:layout_marginStart="20dp"
@@ -261,11 +265,11 @@
             android:layout_height="wrap_content"/>
 
         <RelativeLayout
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/text2"
-            android:layout_marginRight="20dp"
-            android:id="@+id/End_sem"
+            android:layout_marginEnd="20dp"
+            android:id="@+id/end_sem"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:orientation="vertical"

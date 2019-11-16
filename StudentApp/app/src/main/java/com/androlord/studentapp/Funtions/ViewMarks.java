@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androlord.studentapp.Adapter.MarksSheetAdapter;
@@ -26,6 +30,7 @@ public class ViewMarks extends AppCompatActivity {
     MarksSheetAdapter adapter;
     ArrayList<SubjectMarks> list=new ArrayList<SubjectMarks>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,12 @@ public class ViewMarks extends AppCompatActivity {
     }
 
     private void init(String studentcode) {
+
+
+
+
+
+
         recyclerView=findViewById(R.id.marksheet);
         recyclerView.setLayoutManager(new LinearLayoutManager(ViewMarks.this));
         adapter =new MarksSheetAdapter(list);

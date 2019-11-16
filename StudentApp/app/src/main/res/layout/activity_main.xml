@@ -129,6 +129,7 @@
              android:layout_marginRight="20dp"
              android:orientation="horizontal">
             <LinearLayout
+                android:id="@+id/Assets"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="220dp">
@@ -222,6 +223,7 @@
 
          </LinearLayout>
          <LinearLayout
+             android:id="@+id/doubt_session"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_marginTop="30dp"
@@ -229,6 +231,7 @@
              android:layout_marginRight="20dp"
              android:orientation="horizontal">
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="220dp">
@@ -247,8 +250,7 @@
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="40dp"
-                   android:text="
-Ucoming Events"
+                   android:text="Doubt Session"
                    android:gravity="center"
                    android:textColor="#fff"
                    android:paddingBottom="6dp"

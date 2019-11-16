@@ -31,6 +31,7 @@ public class AttendanceSheetAdapter extends RecyclerView.Adapter<AttendanceSheet
 
     @Override
     public void onBindViewHolder(@NonNull MyVIewHolder holder, int position) {
+        holder.subject_code.setText(list.get(position).coursecode);
 
 
         String att = String.valueOf(list.get(position).present);

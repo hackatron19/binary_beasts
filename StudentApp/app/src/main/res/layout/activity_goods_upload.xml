@@ -20,6 +20,7 @@
     <EditText
         android:hint="Mobile No"
         android:id="@+id/MobileNo"
+        android:inputType="phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

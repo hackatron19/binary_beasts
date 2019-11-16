@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/download.png" style="border-radius: 50%;">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+body {
+  background: #3E4061;
+  font-family: 'Raleway', sans-serif;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0 150px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.display-4{
+    text-align: center;
+    color:whitesmoke;
+    font-size: 50px;
+}
+.lead{
+  text-align: center;
+  color:whitesmoke;
+  font-size: 20px;
+}
+
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 200px;
+  border: 2px solid #4FAB40;
+  margin: 20px 20px 20px 20px;
+  color: #4FAB40;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #4FAB40;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#button-5 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-5 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#translate {
+  transform: rotate(50deg);
+  width: 110%;
+  height: 300%;
+  left: -200px;
+  top: -30px;
+  background: #4FAB40;
+  position: absolute;
+  transition: all .3s ease-Out;
+}
+
+#button-5:hover #translate {
+  left: 0;
+  font-weight: bold; 
+}
+
+#button-5:hover a {
+  color: white;
+}
+@media screen and (min-width:1000px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  #container {
+    width: 50%;
+  }
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  float: left;
+  margin-left: 10%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card{
+        transition: 0.5s;
+       margin-top: 5%;
+        
+    }
+
+  .card:hover{
+        
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+      <div class ="container">
+                <div class="container">
+                    <h1 class="display-4">Admin Panel</h1>
+                    <p class="lead">Our heartiest welcome to everyone create account and stay updated.</p>
+                </div>
+      </div>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="card" style="text-align: center; border-radius: 10%;">
+                    <img src="images/student.png" alt="Avatar" style="width: 100%">
+                    <div class="button" id="button-5" onclick="window.location.href = 'student.html';">
+                      <div id="translate" style="display: inline-block;"></div>
+                      <a href="student.html">Register Student</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card" style="text-align: center; border-radius: 10%;">
+                    <img src="images/teacher.jpg" alt="Avatar" style="width: 100%">
+                    <div class="button" id="button-5" onclick="window.location.href = 'teacher.html';">
+                      <div id="translate" style="display: inline-block;"></div>
+                      <a href="teacher.html">Register Teacher</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card" style="text-align: center; border-radius: 10%;">
+                    <img src="images/book2.jpg" alt="Avatar" style="width: 100%">
+                    <div class="button" id="button-5" onclick="window.location.href = 'course.html';">
+                      <div id="translate" style="display: inline-block;"></div>
+                      <a href="course.html">Add Course</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+          
+
+
+
+
+
+
+</body>
+</html>
+			            

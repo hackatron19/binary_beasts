@@ -2,6 +2,7 @@ package com.androlord.studentapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.androlord.studentapp.Funtions.ChatActivity;
 import com.androlord.studentapp.Funtions.ViewPdf;
 import com.androlord.studentapp.R;
 
@@ -18,11 +20,13 @@ import java.util.ArrayList;
 
 public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.MyViewHolder>{
     ArrayList<String> list=new ArrayList<String>();
+    int ch;
     Context context;
-    public SubjectListAdapter(Context context,ArrayList<String> list)
+    public SubjectListAdapter(Context context,int ch,ArrayList<String> list)
     {
         this.list=list;
         this.context=context;
+        this.ch=ch;
     }
     @NonNull
     @Override
@@ -38,9 +42,22 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, ViewPdf.class);
-                intent.putExtra("Data",list.get(position));
-                context.startActivity(intent);
+                Log.d("ak47", "onClick: "+ch);
+                if(ch==1)
+                {
+                    Intent intent=new Intent(context, ViewPdf.class);
+                    intent.putExtra("Data",list.get(position));
+                    context.startActivity(intent);
+                }
+                else if(ch==2){
+                    Intent intent=new Intent(context, ChatActivity.class);
+                    intent.putExtra("Data",list.get(position));
+                    context.startActivity(intent);
+
+                }
+
+
+
             }
         });
     }
