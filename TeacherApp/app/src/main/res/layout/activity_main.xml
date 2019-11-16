@@ -5,16 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+android:background="#DBEAEE"
     tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/s"/>
 
 <Button
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="30dp"
+    android:textColor="#fff"
     android:layout_height="wrap_content"
+    android:background="@drawable/btn_sigin_bg"
     android:id="@+id/takeattendencemainActivity"
     android:text="Take Attendence"/>
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_sigin_bg"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
         android:id="@+id/takemarksmainActivity"
         android:text="Enter Marks"/>
 

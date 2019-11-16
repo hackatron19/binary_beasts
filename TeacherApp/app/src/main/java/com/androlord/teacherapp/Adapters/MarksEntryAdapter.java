@@ -1,6 +1,8 @@
 package com.androlord.teacherapp.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,14 +42,20 @@ public class MarksEntryAdapter extends RecyclerView.Adapter<MarksEntryAdapter.My
         holder.studentrgno.setText(list.get(position).regno);
         int mark=-1;
         holder.submit.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+
                 if(TextUtils.isEmpty(holder.marks.getText().toString().trim()))
                 {
                     Toast.makeText(context,"Please enter marks",Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     MarksSheet.entermarks(list.get(position).regno,Integer.valueOf(holder.marks.getText().toString().trim()));
+                    holder.submit.setEnabled(false);
+                    holder.submit.setBackgroundResource(R.drawable.btn_sigin_bg2);
+
                 }
             }
         });

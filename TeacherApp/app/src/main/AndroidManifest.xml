@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Functions.Assets"></activity>
-        <activity android:name=".Support.UploadAssets" />
+        <activity android:name=".test"></activity>
         <activity android:name=".Support.MarksCourseList" />
         <activity android:name=".Functions.MarksSheet" />
         <activity android:name=".Functions.AttendanceSheet" />

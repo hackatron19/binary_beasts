@@ -38,6 +38,7 @@ public class SignUp extends AppCompatActivity {
         password=findViewById(R.id.PasswordSignUp);
         SignUp=findViewById(R.id.SignUp);
         SignIn=findViewById(R.id.GotoSignIn);
+        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -58,7 +59,7 @@ public class SignUp extends AppCompatActivity {
                 }
                 else
                 {
-                    mAuth.createUserWithEmailAndPassword(email.getText().toString().trim(), email.getText().toString().trim())
+                    mAuth.createUserWithEmailAndPassword(email.getText().toString().trim(),password.getText().toString().trim())
                             .addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {

@@ -35,6 +35,19 @@ public class AttendenceListAdapter extends RecyclerView.Adapter<AttendenceListAd
             @Override
             public void onClick(View v) {
                 AttendanceSheet.markPresent(list.get(position).regno,list.get(position).present);
+                holder.Present.setText("Present Sir");
+                holder.Present.setBackgroundResource(R.drawable.btn_sigin_bg3);
+                holder.Absent.setEnabled(false);
+
+
+            }
+        });
+        holder.Absent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // AttendanceSheet.markPresent(list.get(position).regno,list.get(position).present);
+                holder.Absent.setVisibility(View.INVISIBLE);
+                holder.Present.setEnabled(false);
 
 
             }

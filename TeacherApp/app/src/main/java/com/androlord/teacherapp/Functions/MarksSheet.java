@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
 
@@ -27,20 +30,49 @@ public class MarksSheet extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<StudentAttendence> list=new ArrayList<StudentAttendence>();
     MarksEntryAdapter adapter;
-    static String exam="Test2";
-    public static void entermarks(String studentcode,int marks)
-    {
-        Log.d("ak47",studentcode+" "+marks);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Courses/"+subjectcode+"/Students/"+studentcode+"/Exams/"+exam);
+    static Context context;
 
-        myRef.setValue(marks);
+    static String exam="";
+    public static void entermarks(String studentcode,int marks)
+
+    {
+        if (exam==null||exam.equalsIgnoreCase(""))
+        {
+            Toast.makeText(context, "Choose A Exam", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Log.d("ak47", studentcode + " " + marks);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Courses/" + subjectcode + "/Students/" + studentcode + "/Exams/" + exam);
+
+            myRef.setValue(marks);
+        }
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marks_sheet);
+        context=getApplicationContext();
+
+        MaterialSpinner spinner2 = (MaterialSpinner)findViewById(R.id.dropdownview2);
+        spinner2.setItems("EndSem", "MidSem");
+        spinner2.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                if(item.equals("EndSem"))
+                {
+
+                   exam="EndSem";
+                }
+                else   if(item.equals("MidSem"))
+                {
+                   exam="MidSem";
+
+                }
+
+            }
+        });
         Intent intent=getIntent();
         Log.d("ak47", "onCreate: ");
         if(intent.hasExtra("Data"))

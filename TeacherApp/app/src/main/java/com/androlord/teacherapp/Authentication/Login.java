@@ -32,6 +32,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
         init();
     }
     private void init() {
@@ -59,28 +60,21 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    mAuth.signInWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim())
-                            .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        Log.d("ak47", "signInWithEmail:success");
-                                        FirebaseUser user = mAuth.getCurrentUser();
-                                        startActivity(new Intent(Login.this, MainActivity.class));
-                                        finish();
-                                        //updateUI(user);
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Log.w("ak47", "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(Login.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
-                                        //updateUI(null);
-                                    }
+                    mAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                startActivity(new Intent(Login.this, MainActivity.class));
+                                finish();
 
-                                    // ...
-                                }
-                            });
+                            } else {
+                                String errormessage = task.getException().getMessage();
+                                Toast.makeText(Login.this, "ERROR:" + errormessage, Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
                 }
 
             }
