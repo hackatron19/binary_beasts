@@ -1,0 +1,413 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/text"
+            android:text="Subject Code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+            android:layout_toEndOf="@+id/text"
+            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_marginTop="28dp"
+            android:layout_toEndOf="@+id/text"
+            android:visibility="gone"
+            android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+
+
+   <RelativeLayout
+       android:id="@+id/layout_7"
+       android:layout_below="@+id/layout1"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+
+       <RelativeLayout
+           android:id="@+id/layout_6"
+
+           android:layout_marginStart="20dp"
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/text1"
+               android:text="Mid-Sem Results"
+               android:textSize="20sp"
+               android:textColor="#000000"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               />
+
+           <ImageView
+               android:layout_toEndOf="@+id/text1"
+               android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+               android:layout_width="wrap_content"
+               android:layout_marginTop="5dp"
+               android:id="@+id/arow_"
+               android:layout_height="wrap_content"/>
+
+           <ImageView
+               android:layout_toEndOf="@+id/text1"
+               android:visibility="gone"
+               android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
+               android:layout_width="wrap_content"
+               android:layout_marginTop="5dp"
+               android:layout_height="wrap_content"/>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:visibility="visible"
+           android:layout_marginTop="15dp"
+           android:layout_below="@+id/layout_6"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"
+           android:id="@+id/degree"
+           android:layout_width="match_parent"
+           android:layout_height="150dp"
+           android:orientation="vertical"
+           android:background="@drawable/recatngular_border"
+           >
+
+           <RelativeLayout
+               android:id="@+id/layout_10"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/semester_results"
+                   android:layout_centerHorizontal="true"
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginStart="10dp"
+                   />
+
+               <ImageView
+                   android:layout_alignParentEnd="true"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:layout_marginEnd="15dp"
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_marginTop="5dp"
+                   android:src="@drawable/ic_info_black_24dp"
+                   />
+           </RelativeLayout>
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_below="@+id/layout_10"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+
+               <LinearLayout
+                   android:id="@+id/layout_11"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+
+
+                   <TextView
+                       android:layout_marginStart="20dp"
+                       android:layout_marginTop="15dp"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:text="Marks Obtained : "
+                       android:textStyle="bold"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:layout_marginTop="15dp"
+                       android:layout_marginStart="5dp"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:id="@+id/marks_obtained_mid_sem"
+                       android:text="69"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+
+               </LinearLayout>
+
+
+               <LinearLayout
+                   android:id="@+id/layout_12"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:layout_marginStart="20dp"
+                       android:layout_marginTop="15dp"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:textStyle="bold"
+                       android:text="Total Marks : "
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:layout_marginTop="15dp"
+                       android:layout_marginStart="5dp"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:id="@+id/total_marks_mid_sem"
+                       android:text="100"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+
+               </LinearLayout>
+
+
+
+               <LinearLayout
+                   android:id="@+id/layout_13"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+
+
+                   <TextView
+                       android:layout_marginStart="20dp"
+                       android:layout_marginTop="15dp"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:textStyle="bold"
+                       android:text="Passing Marks : "
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:layout_marginTop="15dp"
+                       android:layout_marginStart="5dp"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:id="@+id/passing_marks_mid_sem"
+                       android:text="40"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+
+               </LinearLayout>
+
+
+           </LinearLayout>
+
+
+
+
+       </RelativeLayout>
+
+
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_below="@+id/layout_7"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/text2"
+            android:text="End-Sem Results"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:layout_toEndOf="@+id/text2"
+            android:id="@+id/arrow_end_sem_down"
+            android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_toEndOf="@+id/text2"
+            android:visibility="gone"
+            android:id="@+id/arrow_end_sem_up"
+            android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/text2"
+            android:layout_marginRight="20dp"
+            android:id="@+id/End_sem"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:background="@drawable/recatngular_border"
+            >
+
+            <RelativeLayout
+                android:id="@+id/layout_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester_results"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_info_black_24dp"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_below="@+id/layout_9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/layout_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:text="Marks Obtained : "
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:id="@+id/marks_obtained_end_sem"
+                        android:text="69"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="Total Marks : "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:id="@+id/total_marks_end_sem"
+                        android:text="100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/layout_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="Passing Marks : "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:id="@+id/passing_marks_end_sem"
+                        android:text="40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
