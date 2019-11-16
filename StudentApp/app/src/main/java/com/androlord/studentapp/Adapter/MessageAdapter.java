@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.androlord.studentapp.Data.FriendlyMessage;
+import com.androlord.studentapp.Funtions.ChatActivity;
 import com.androlord.studentapp.R;
 import com.androlord.studentapp.Support.PreferencesUtility;
 
@@ -43,16 +44,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-     if(PreferencesUtility.currentuser.equals(PreferencesUtility.sender)==true){
+     if(!mData.get(position).getName().equalsIgnoreCase(ChatActivity.sender)){
 
-         if(mData.get(position).isSent())
-         {
+
              holder.right_bubble.setVisibility(GONE);
              holder.left_bubble.setVisibility(View.VISIBLE);
 
              holder.message_recieve.setText(mData.get(position).getText());
              holder.name_recieve.setText(mData.get(position).getName());
-         }
+
 
          }
      else

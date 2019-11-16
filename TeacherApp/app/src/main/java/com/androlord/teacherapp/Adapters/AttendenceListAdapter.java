@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import at.markushi.ui.CircleButton;
 
 import com.androlord.teacherapp.Data.StudentAttendence;
 import com.androlord.teacherapp.Functions.AttendanceSheet;
@@ -35,7 +36,7 @@ public class AttendenceListAdapter extends RecyclerView.Adapter<AttendenceListAd
             @Override
             public void onClick(View v) {
                 AttendanceSheet.markPresent(list.get(position).regno,list.get(position).present);
-                holder.Present.setText("Present Sir");
+              //  holder.Present.setText("Present Sir");
                 holder.Present.setBackgroundResource(R.drawable.btn_sigin_bg3);
                 holder.Absent.setEnabled(false);
 
@@ -61,7 +62,7 @@ public class AttendenceListAdapter extends RecyclerView.Adapter<AttendenceListAd
 
     public static class MyViewHolderAttendence extends RecyclerView.ViewHolder {
         TextView regno;
-        Button Present,Absent;
+       CircleButton  Present,Absent;
         public MyViewHolderAttendence(@NonNull View itemView) {
             super(itemView);
             regno=itemView.findViewById(R.id.regnosinglestudentattendencemarker);

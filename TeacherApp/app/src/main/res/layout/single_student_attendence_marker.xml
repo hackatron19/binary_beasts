@@ -4,60 +4,62 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
 android:layout_width="match_parent"
-android:layout_height="120dp"
+android:layout_height="70dp"
 app:cardElevation="50dp"
 app:cardCornerRadius="5dp"
-android:layout_margin="20dp">
-<RelativeLayout
+android:layout_margin="10dp">
+<LinearLayout
 
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:background="@drawable/cardview_bg1"
-    android:layout_height="120dp">
+    android:layout_height="70dp">
+    <at.markushi.ui.CircleButton
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/btn_sigin_bg2"
+        app:cb_color="#59E455"
+        android:src="@drawable/ic_action_tick"
+
+        android:id="@+id/StudentPresent"
+        app:cb_pressedRingWidth="8dp" />
+
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22dp"
-        android:gravity="center"
-        android:layout_marginTop="12dp"
-        android:hint="StudentID"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="50dp"
+
+        android:hint="2018UGEC007"
 
 android:textColor="#0E7DF3"
         android:textStyle="bold"
         android:textColorHint="#065DF3"
         android:id="@+id/regnosinglestudentattendencemarker"/>
 
-    <Button
-        android:layout_width="110dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="12dp"
-        android:layout_gravity="center"
-        android:layout_height="50dp"
-        android:text="Present"
-        android:textSize="12dp"
-        android:textColor="#131212"
-android:layout_marginLeft="23dp"
-        android:layout_below="@id/marksentryValue"
-        android:background="@drawable/btn_sigin_bg2"
-        android:id="@+id/StudentPresent"/>
-    <Button
-        android:layout_width="110dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="12dp"
-        android:layout_gravity="center"
-        android:textSize="12dp"
-        android:layout_height="50dp"
-        android:text="Absent"
-        android:textColor="#0F0F0F"
-        android:layout_marginLeft="220dp"
-        android:layout_below="@id/marksentryValue"
-        android:background="@drawable/absentbtn"
-        android:id="@+id/StudentAbsent"/>
+
+
+    <at.markushi.ui.CircleButton
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:background="@drawable/absentbtn"
+        android:src="@drawable/error"
+            app:cb_color="#99CC00"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="12dp"
+
+            android:id="@+id/StudentAbsent"
+            app:cb_pressedRingWidth="8dp" />
 
 
 
 
-</RelativeLayout>
+
+</LinearLayout>
 
 
 

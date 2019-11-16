@@ -19,15 +19,15 @@ public class FriendlyMessage {
 
     private String text;
     private String name;
-    private boolean sent;
+
 
     public FriendlyMessage() {
     }
 
-    public FriendlyMessage(String text, String name, boolean sent) {
+    public FriendlyMessage(String text, String name) {
         this.text = text;
         this.name = name;
-        this.sent = sent;
+
     }
 
     public String getText() {
@@ -46,11 +46,5 @@ public class FriendlyMessage {
         this.name = name;
     }
 
-    public boolean isSent() {
-        return sent;
-    }
 
-    public void setSent(boolean sent) {
-        this.sent = sent;
-    }
 }

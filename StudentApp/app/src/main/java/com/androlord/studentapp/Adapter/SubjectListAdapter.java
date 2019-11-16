@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.androlord.studentapp.Funtions.ChatActivity;
 import com.androlord.studentapp.Funtions.ViewPdf;
 import com.androlord.studentapp.R;
+import com.androlord.studentapp.Support.SubjectList;
 
 import java.util.ArrayList;
 
@@ -52,6 +53,7 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
                 else if(ch==2){
                     Intent intent=new Intent(context, ChatActivity.class);
                     intent.putExtra("Data",list.get(position));
+                    intent.putExtra("User", SubjectList.studentid);
                     context.startActivity(intent);
 
                 }

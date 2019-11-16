@@ -25,6 +25,7 @@ public class SubjectList extends AppCompatActivity {
     SubjectListAdapter adapter;
     ArrayList<String> list=new ArrayList<String>();
     int ch;
+    public static String studentid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class SubjectList extends AppCompatActivity {
         }
         if(intent.hasExtra("Data"))
         {
-            String studentid=intent.getStringExtra("Data");
+            studentid=intent.getStringExtra("Data");
             init(studentid);
             setdata(studentid);
         }

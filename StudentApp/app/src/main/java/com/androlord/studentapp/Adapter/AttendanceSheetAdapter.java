@@ -44,7 +44,10 @@ public class AttendanceSheetAdapter extends RecyclerView.Adapter<AttendanceSheet
             holder.status.setText("Status : Attend next" + " " + r + " classes to get back on track");
         else
             holder.status.setText("Status : You are on track");
+        if(list.get(position).total!=0)
         holder.tv.setText(String.valueOf((list.get(position).present*100)/list.get(position).total)+"%");
+        else
+            holder.tv.setText(String.valueOf(""));
 
 
 
