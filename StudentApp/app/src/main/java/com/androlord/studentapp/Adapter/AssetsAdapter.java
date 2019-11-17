@@ -1,7 +1,9 @@
 package com.androlord.studentapp.Adapter;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,16 +14,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.androlord.studentapp.Data.Assets;
+import com.androlord.studentapp.Funtions.Goods;
 import com.androlord.studentapp.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 
 import java.util.ArrayList;
+
 
 public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.MyViewHolder>{
     ArrayList<Assets> list;
@@ -69,7 +75,6 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.MyViewHold
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             whatsapp = itemView.findViewById(R.id.click_to_whatsapp);
-            phone = itemView.findViewById(R.id.click_to_phone);
             imageView=itemView.findViewById(R.id.AssetsImageSingle);
             textView=itemView.findViewById(R.id.AssetDescriptionSingle);
         }

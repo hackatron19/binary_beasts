@@ -51,20 +51,6 @@
 
 
 
-      <com.airbnb.lottie.LottieAnimationView
-
-          android:layout_marginStart="0dp"
-          android:layout_width="60dp"
-          android:layout_height="90dp"
-          android:layout_marginBottom="1dp"
-          app:lottie_loop="true"
-          android:layout_gravity="center"
-          app:lottie_autoPlay="true"
-          android:id="@+id/click_to_phone"
-          app:lottie_rawRes="@raw/contact_us" />
-
-
-
   </LinearLayout>
 
 </RelativeLayout>

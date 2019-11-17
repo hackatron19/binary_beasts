@@ -1,21 +1,29 @@
 package com.androlord.studentapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.androlord.studentapp.Authentication.LoginActivity;
 import com.androlord.studentapp.Funtions.ChatActivity;
+import com.androlord.studentapp.Funtions.ComplainBox;
 import com.androlord.studentapp.Funtions.Goods;
 import com.androlord.studentapp.Funtions.UploadPdf;
 import com.androlord.studentapp.Funtions.ViewAttendence;
@@ -41,8 +49,43 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Logout:
                 signOut();
                 break;
+
+            case R.id.schedule:
+            schedule();
+            break;
+            case R.id.ComplainBox:
+                Intent intent=new Intent(MainActivity.this, ComplainBox.class);
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void schedule() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        final AlertDialog dialog = builder.create();
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogLayout = inflater.inflate(R.layout.schedule_students, null);
+        dialog.setView(dialogLayout);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        dialog.show();
+
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface d) {
+                ImageView image = (ImageView) dialog.findViewById(R.id.goProDialogImage);
+                Bitmap icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
+                        R.drawable.ic_launcher_background);
+                float imageWidthInPX = (float)image.getWidth();
+
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(imageWidthInPX),
+                        Math.round(imageWidthInPX * (float)icon.getHeight() / (float)icon.getWidth()));
+                image.setLayoutParams(layoutParams);
+
+
+            }
+        });
     }
 
     private void signOut() {

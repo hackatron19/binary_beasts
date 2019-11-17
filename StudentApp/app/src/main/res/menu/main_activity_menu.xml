@@ -6,4 +6,17 @@
 
     </item>
 
+    <item
+        android:id="@+id/schedule"
+        android:title="Schedule">
+
+
+    </item>
+    <item
+        android:id="@+id/ComplainBox"
+        android:title="Complain Box">
+
+
+    </item>
+
 </menu>

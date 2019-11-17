@@ -2,11 +2,16 @@ package com.androlord.studentapp.Funtions;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +37,9 @@ public class Goods extends AppCompatActivity {
     LottieAnimationView whatsaap,phone;
     FloatingActionButton floatingActionButton;
     ArrayList<Assets> list=new ArrayList<Assets>();
+    private static Context context;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +93,10 @@ public class Goods extends AppCompatActivity {
 
 
     private void init() {
+    context=Goods.this;
         floatingActionButton=findViewById(R.id.addAssets);
         recyclerView=findViewById(R.id.AssetsList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         adapter=new AssetsAdapter(Goods.this,list);
         recyclerView.setAdapter(adapter);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -98,4 +107,6 @@ public class Goods extends AppCompatActivity {
             }
         });
     }
+
+
 }

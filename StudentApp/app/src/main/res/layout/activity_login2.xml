@@ -1,33 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".Authentication.LoginActivity"
+    android:gravity="center"
+    android:background="#041042">
+
+
+
+<androidx.cardview.widget.CardView
+    android:layout_margin="10dp"
+    android:elevation="100dp"
+    app:cardCornerRadius="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+   >
+<RelativeLayout
+    android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Authentication.LoginActivity"
     android:orientation="vertical">
 
     <EditText
+        android:layout_margin="8dp"
         android:id="@+id/emailID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email" />
     <EditText
+        android:layout_margin="8dp"
         android:id="@+id/Password"
+        android:layout_below="@+id/emailID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"/>
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:layout_width="250dp"
+        android:layout_below="@+id/Password"
+        android:layout_height="40dp"
         android:id="@+id/SignIn"
+        android:textColor="#ffffff"
+        android:background="@drawable/buttonbg"
         android:text="SignIn"/>
     <TextView
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SIGNUP"
+        android:layout_below="@+id/SignIn"
         android:gravity="center"
         android:id="@+id/GotoSignUp"/>
 
-</LinearLayout>
+</RelativeLayout>
+</androidx.cardview.widget.CardView>
+</RelativeLayout>

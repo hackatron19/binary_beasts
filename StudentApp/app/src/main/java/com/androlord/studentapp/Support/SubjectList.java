@@ -44,14 +44,14 @@ public class SubjectList extends AppCompatActivity {
             setdata(studentid);
         }
 
-
-    } @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-
     }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        getMenuInflater().inflate(R.menu.main_menu, menu);
+//        return true;
+//
+//    }
 
 
     private void setdata(String studentid) {

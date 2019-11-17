@@ -1,33 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     tools:context=".Authentication.LoginActivity"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:background="#041042">
 
-    <EditText
-        android:id="@+id/emailIDSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email" />
-    <EditText
-        android:id="@+id/PasswordSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/SignUp"
-        android:text="SignUp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SIGNIN"
-        android:gravity="center"
-        android:id="@+id/GotoSignIn"/>
 
-</LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:elevation="100dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_margin="8dp"
+                android:id="@+id/emailIDSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email" />
+            <EditText
+                android:layout_margin="8dp"
+                android:id="@+id/PasswordSignUp"
+                android:layout_below="@+id/emailIDSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"/>
+            <Button
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:layout_width="250dp"
+                android:layout_below="@+id/PasswordSignUp"
+                android:layout_height="40dp"
+                android:id="@+id/SignUp"
+                android:textColor="#ffffff"
+                android:background="@drawable/buttonbg"
+                android:text="SignIn"/>
+            <TextView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIGNIN"
+                android:layout_below="@+id/SignUp"
+                android:gravity="center"
+                android:id="@+id/GotoSignIn"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

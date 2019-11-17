@@ -3,6 +3,7 @@ package com.androlord.studentapp.Authentication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         SignIn=findViewById(R.id.SignIn);
         SignUp=findViewById(R.id.GotoSignUp);
 
+
+
         mAuth = FirebaseAuth.getInstance();
 
         SignUp.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +57,10 @@ public class LoginActivity extends AppCompatActivity {
         SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+                progressDialog.setMessage("Logging in, please wait....");
+                progressDialog.show();
+
                 if(TextUtils.isEmpty(email.getText().toString().trim())||TextUtils.isEmpty(password.getText().toString().trim()))
                 {
                     Toast.makeText(LoginActivity.this,"Fill Up",Toast.LENGTH_LONG).show();
@@ -65,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        progressDialog.dismiss();
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d("ak47", "signInWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
